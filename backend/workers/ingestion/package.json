@@ -1,0 +1,19 @@
+{
+  "name": "ingestion",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hono": "^4.9.2",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250822.0"
+  },
+  "description": ""
+}

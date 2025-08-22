@@ -1,0 +1,17 @@
+{
+  "name": "hyperliquid-signal-test",
+  "version": "1.0.0",
+  "description": "Test environment for Hyperliquid Signal System",
+  "main": "mock-server.js",
+  "scripts": {
+    "start": "node mock-server.js",
+    "test": "node test-runner.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "keywords": ["testing", "mock", "api"],
+  "author": "Manus AI",
+  "license": "MIT"
+}
+

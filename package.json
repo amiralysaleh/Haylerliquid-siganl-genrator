@@ -1,0 +1,36 @@
+{
+  "name": "hyperliquid-signal-system",
+  "version": "1.0.0",
+  "description": "A robust system to monitor on-chain perpetual trading activity on Hyperliquid and generate trading signals",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "cd backend/workers/ingestion && npm install && cd ../signal-processor && npm install && cd ../price-monitor && npm install && cd ../notifier && npm install && cd ../performance-tracker && npm install && cd ../../frontend/admin-panel && pnpm install",
+    "build-frontend": "cd frontend/admin-panel && pnpm run build",
+    "deploy-workers": "cd backend/workers/ingestion && wrangler deploy && cd ../signal-processor && wrangler deploy && cd ../price-monitor && wrangler deploy && cd ../notifier && wrangler deploy && cd ../performance-tracker && wrangler deploy",
+    "deploy-frontend": "cd frontend/admin-panel && pnpm run build && wrangler pages deploy dist --project-name hyperliquid-admin",
+    "setup-db": "wrangler d1 execute hyperliquid_signals --file=backend/db/migrations/0001_initial_schema.sql && wrangler d1 execute hyperliquid_signals --file=backend/db/migrations/0002_performance_tables.sql",
+    "dev-frontend": "cd frontend/admin-panel && pnpm run dev",
+    "test-workers": "echo 'Testing worker health endpoints...' && curl -f https://ingestion-worker.your-subdomain.workers.dev/health || echo 'Update worker URLs in package.json'"
+  },
+  "keywords": [
+    "hyperliquid",
+    "trading",
+    "signals",
+    "cloudflare",
+    "workers",
+    "crypto",
+    "perpetuals",
+    "monitoring"
+  ],
+  "author": "Manus AI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/hyperliquid-signal-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/hyperliquid-signal-system/issues"
+  },
+  "homepage": "https://github.com/your-username/hyperliquid-signal-system#readme"
+}
+

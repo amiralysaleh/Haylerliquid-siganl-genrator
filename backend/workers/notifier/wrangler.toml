@@ -1,0 +1,16 @@
+name = "notifier-worker"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+ENVIRONMENT = "development"
+TELEGRAM_BOT_TOKEN = "<YOUR_TELEGRAM_BOT_TOKEN>"
+TELEGRAM_CHAT_ID = "<YOUR_TELEGRAM_CHAT_ID>"
+
+[[queues.consumers]]
+queue = "notification-events"
+max_batch_size = 100
+max_batch_timeout = 30
+retry_delay = 1000
+
+

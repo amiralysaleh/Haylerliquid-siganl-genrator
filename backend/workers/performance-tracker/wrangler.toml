@@ -1,0 +1,15 @@
+name = "performance-tracker-worker"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+ENVIRONMENT = "development"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hyperliquid_signals"
+database_id = "<YOUR_D1_DATABASE_ID>"
+
+[triggers]
+crons = [ "0 */6 * * * *" ] # Every 6 hours
+
